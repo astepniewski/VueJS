@@ -1,1 +1,10 @@
-﻿console.log('Hello from index app.js');
+﻿import Vue from 'vue'
+
+new Vue({
+    el: '#app',
+    data() {
+        return {
+            message: "message"
+        }
+    }
+})
