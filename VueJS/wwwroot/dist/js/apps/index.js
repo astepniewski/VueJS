@@ -149,7 +149,7 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.js\");\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);\n﻿\r\n\r\nnew vue__WEBPACK_IMPORTED_MODULE_0___default.a({\r\n    el: '#app',\r\n    data() {\r\n        return {\r\n            message: \"message\"\r\n        }\r\n    }\r\n})\n\n//# sourceURL=webpack:///./wwwroot/src/apps/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.js\");\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);\n﻿\r\n\r\nnew vue__WEBPACK_IMPORTED_MODULE_0___default.a({\r\n    el: '#app',\r\n    data() {\r\n        return {\r\n            resource: {}\r\n        }\r\n    },\r\n    beforeMount() {\r\n        this.resource = JSON.parse(this.$el.attributes['vue-resource'].value);\r\n    }\r\n})\n\n//# sourceURL=webpack:///./wwwroot/src/apps/index.js?");
 
 /***/ })
 

@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Globalization;
 using VueJS.Models;
+using VueJS.Resources;
 
 namespace VueJS.Controllers
 {
@@ -8,7 +10,9 @@ namespace VueJS.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            var model = new BaseModel();
+            model.Resources = ResourceFactory.GetResource(new CultureInfo("en"), "IndexResource");
+            return View(model);
         }
 
         public IActionResult About()

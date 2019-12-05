@@ -1,8 +1,10 @@
-﻿@{
+﻿@model VueJS.Models.BaseModel
+
+@{
     ViewData["Title"] = "Home Page";
 }
 <h1>Index</h1>
-<div id="app">
-    <h3>{{message}}</h3>
+<div id="app" vue-resource="@Model.Resources">
+    <h3>{{resource.firstName}}</h3>
 </div>
 <script src="~/dist/js/apps/index.js"></script>
