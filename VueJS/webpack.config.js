@@ -19,8 +19,7 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                // Exclude transpiling `node_modules`, except `bootstrap-vue/src`
-                exclude: /node_modules\/(?!bootstrap-vue\/src\/)/,
+                exclude: /(node_modules)/,
                 use: {
                     loader: 'babel-loader',
                     options: {
@@ -36,8 +35,7 @@ module.exports = {
     },
     resolve: {
         alias: {
-            'vue': 'vue/dist/vue.js',
-            'bootstrap-vue$': 'bootstrap-vue/src/index.js'
+            'vue': 'vue/dist/vue.js'
         }
     },
     plugins: [
