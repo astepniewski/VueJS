@@ -16,12 +16,28 @@ module.exports = {
             {
                 test: /\.vue$/,
                 use: 'vue-loader'
+            },
+            {
+                test: /\.js$/,
+                // Exclude transpiling `node_modules`, except `bootstrap-vue/src`
+                exclude: /node_modules\/(?!bootstrap-vue\/src\/)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            },
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
             }
         ]
     },
     resolve: {
         alias: {
-            vue: 'vue/dist/vue.js'
+            'vue': 'vue/dist/vue.js',
+            'bootstrap-vue$': 'bootstrap-vue/src/index.js'
         }
     },
     plugins: [
