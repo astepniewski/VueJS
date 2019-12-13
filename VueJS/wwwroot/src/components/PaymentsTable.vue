@@ -1,7 +1,9 @@
 ﻿<template>
     <vuetable ref="vuetable"
               api-url="https://vuetable.ratiw.net/api/users"
-              :fields="fields">
+              :fields="fields"
+              :css="css"
+              :sort-order="sortOrder">
     </vuetable>
 </template>
 
@@ -14,12 +16,17 @@
         data() {
             return {
                 fields: [
-                    'name', 'email',
+                    {
+                        name: 'name',
+                        sortField: 'name'
+                    },
+                    'email',
                     {
                         name: 'birthdate',
                         titleClass: 'text-center',
                         dataClass: 'text-center',
-                        callback: 'formatDate|DD/MM/YYYY'
+                        callback: 'formatDate|MM/DD/YYYY',
+                        sortField: 'birthdate'
                     },
                     {
                         name: 'nickname',
@@ -37,7 +44,18 @@
                         dataClass: 'text-right',
                         callback: 'formatNumber'
                     }
-                ]
+                ],
+                sortOrder: [
+                    {
+                        field: 'birthdate',
+                        sortField: 'birthdate',
+                        direction: 'asc'
+                    }
+                ],
+                css: {
+                    ascendingIcon: 'glyphicon glyphicon-chevron-up',
+                    descendingIcon: 'glyphicon glyphicon-chevron-down'
+                }
             }
         },
         methods: {
