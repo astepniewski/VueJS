@@ -17,6 +17,11 @@
             return {
                 fields: [
                     {
+                        name: '__checkbox',
+                        titleClass: 'center aligned',
+                        dataClass: 'center aligned'
+                    },
+                    {
                         name: 'name',
                         sortField: 'name'
                     },
@@ -57,6 +62,9 @@
                     descendingIcon: 'glyphicon glyphicon-chevron-down'
                 }
             }
+        },
+        mounted() {
+            setTimeout(() => console.log(this.$refs.vuetable.selectedTo), 5000);
         },
         methods: {
             allcap(value) {
