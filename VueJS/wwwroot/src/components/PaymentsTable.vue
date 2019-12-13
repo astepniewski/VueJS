@@ -7,6 +7,7 @@
 
 <script>
     import Vuetable from 'vuetable-2'
+    import accounting from 'accounting'
 
     export default {
         data() {
@@ -31,7 +32,8 @@
                     {
                         name: 'salary',
                         titleClass: 'text-center',
-                        dataClass: 'text-right'
+                        dataClass: 'text-right',
+                        callback: 'formatNumber'
                     }
                 ]
             }
@@ -44,6 +46,9 @@
                 return value == 'M'
                     ? '<span class="badge badge-info"><i class="glyphicon glyphicon-star"></i> Male</span>'
                     : '<span class="badge badge-danger"><i class="glyphicon glyphicon-heart"></i> Female</span>'
+            },
+            formatNumber(value) {
+                return accounting.formatNumber(value, 2)
             }
         },
         components: { Vuetable }
