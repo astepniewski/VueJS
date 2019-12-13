@@ -16,15 +16,17 @@
                     {
                         name: 'birthdate',
                         titleClass: 'text-center',
-                        dataClass: 'text-center'
+                        dataClass: 'text-center',
                     },
                     {
                         name: 'nickname',
+                        callback: 'allcap'
                     },
                     {
                         name: 'gender',
                         titleClass: 'text-center',
-                        dataClass: 'text-center'
+                        dataClass: 'text-center',
+                        callback: 'genderLabel'
                     },
                     {
                         name: 'salary',
@@ -32,6 +34,16 @@
                         dataClass: 'text-right'
                     }
                 ]
+            }
+        },
+        methods: {
+            allcap(value) {
+                return value.toUpperCase()
+            },
+            genderLabel(value) {
+                return value == 'M'
+                    ? '<span class="badge badge-info"><i class="glyphicon glyphicon-star"></i> Male</span>'
+                    : '<span class="badge badge-danger"><i class="glyphicon glyphicon-heart"></i> Female</span>'
             }
         },
         components: { Vuetable }
