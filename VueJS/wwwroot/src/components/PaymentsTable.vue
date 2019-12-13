@@ -64,7 +64,11 @@
             }
         },
         mounted() {
-            setTimeout(() => console.log(this.$refs.vuetable.selectedTo), 5000);
+            setTimeout(() => {
+                console.log(this.$refs.vuetable.selectedTo);
+                this.fields[3].visible = false;
+                this.$refs.vuetable.normalizeFields();
+            }, 5000);
         },
         methods: {
             allcap(value) {
