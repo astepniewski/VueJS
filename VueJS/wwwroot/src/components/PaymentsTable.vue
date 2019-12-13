@@ -1,6 +1,6 @@
 ﻿<template>
     <vuetable ref="vuetable"
-              :api-url="url"
+              api-url="https://vuetable.ratiw.net/api/users"
               :fields="fields"
               :css="css"
               :sort-order="sortOrder">
@@ -59,16 +59,12 @@
                 ],
                 css: {
                     ascendingIcon: 'glyphicon glyphicon-chevron-up',
-                    descendingIcon: 'glyphicon glyphicon-chevron-down'
-                },
-                url: ""
+                    descendingIcon: 'glyphicon glyphicon-chevron-down',
+                    tableClass: 'table-striped'
+                }
             }
         },
         mounted() {
-            setTimeout(() => {
-                this.url = 'https://vuetable.ratiw.net/api/users';
-                this.$refs.vuetable.refresh();
-            }, 15000);
             setTimeout(() => {
                 console.log(this.$refs.vuetable.selectedTo);
                 this.fields[3].visible = false;
