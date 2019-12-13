@@ -4,12 +4,13 @@ const { VueLoaderPlugin } = require('vue-loader')
 module.exports = {
     mode: 'development',
     entry: {
-        'index': './wwwroot/src/apps/index.js',
-        'about': './wwwroot/src/apps/about.js'
+        'js/apps/index': './wwwroot/src/apps/index.js',
+        'js/apps/about': './wwwroot/src/apps/about.js'
     },
     output: {
         filename: '[name].js',
-        path: __dirname + '/wwwroot/dist/js/apps'
+        path: __dirname + '/wwwroot/dist',
+        publicPath: '/dist/'
     },
     module: {
         rules: [
