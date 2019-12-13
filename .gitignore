@@ -260,3 +260,4 @@ paket-files/
 __pycache__/
 *.pyc
 /VueJS/wwwroot/dist/js/apps
+/VueJS/package-lock.json
