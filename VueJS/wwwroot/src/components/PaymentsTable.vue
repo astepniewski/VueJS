@@ -8,6 +8,7 @@
 <script>
     import Vuetable from 'vuetable-2'
     import accounting from 'accounting'
+    import moment from 'moment'
 
     export default {
         data() {
@@ -18,6 +19,7 @@
                         name: 'birthdate',
                         titleClass: 'text-center',
                         dataClass: 'text-center',
+                        callback: 'formatDate|DD/MM/YYYY'
                     },
                     {
                         name: 'nickname',
@@ -49,6 +51,11 @@
             },
             formatNumber(value) {
                 return accounting.formatNumber(value, 2)
+            },
+            formatDate(value, fmt = 'D MMM YYYY') {
+                return (value == null)
+                    ? ''
+                    : moment(value, 'YYYY-MM-DD').format(fmt)
             }
         },
         components: { Vuetable }
